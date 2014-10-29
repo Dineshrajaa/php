@@ -1,0 +1,17 @@
+.formstyle{
+	width: 500px;
+    clear: both;
+}
+
+.formstyle label{
+	float: left;
+    width: 150px;
+    text-align: right;
+    margin-right: 0.5em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
