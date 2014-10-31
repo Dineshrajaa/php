@@ -28,7 +28,13 @@ $("#age").text(sum);
 });
 //Validation Plugin Definition
 $("#submitbtn").click(function(){
-	$("#registrationform").validate();
+	$("#registrationform").validate({
+		rules:{
+			mail:{
+				email:true
+			}
+		}
+	});
 });
 
 });
