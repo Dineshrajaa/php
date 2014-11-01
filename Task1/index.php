@@ -37,11 +37,31 @@ $("#submitbtn").click(function(){
 	});
 });
 
+//Address Textarea Validation 
+
+$("#address").on({
+    keydown: function (e) {
+    	var vetti=$("#address").val();
+		var vettilength=vetti.length;
+		if (vettilength==0) {
+        if (e.which === 32) {        	
+        	
+        	return false;
+        }
+        else return true;
+        }
+    },
+    change: function () {
+
+        this.value = this.value.replace(/\s/g, "");
+        
+    }
+});
 });
 </script>
 </head>
 <body>
-	<center>
+	
 		<label>REGISTRATION FORM</label><br/><br/><br/>
 		<form id="registrationform" action="#" method="post" class="formstyle">
 		<label for="fname">First Name:</label>
@@ -49,14 +69,14 @@ $("#submitbtn").click(function(){
 		<label for="lname">Last Name:</label>
 		<input type="text" id="lname" name="lname" /><br/>
 		<label for="datepicker">Date Of Birth:</label>
-		<input type="text" id="datepicker" name="datepicker" /><br/>
+		<input type="text" id="datepicker" name="datepicker"/><br/>
 		<label for="age">Age:</label>
 		<label id="age"></label><br/>
 		<label for="gender">Gender:</label>
 		<input type="radio" name="gender" id="gender" value="male"/>Male
 		<input type="radio" name="gender" id="gender" value="female"/>Female<br/>
 		<label for="address">Address</label>
-		<textarea id="address" rows="4" cols="20">			
+		<textarea id="address" name="address"rows="4" cols="20">			
 		</textarea><br/>
 		<label for="mobile">Mobile no:</label>
 		<input type="text" id="mobile" name="mobile" /><br/>
@@ -89,6 +109,6 @@ $("#submitbtn").click(function(){
 		<input type="submit" id="submitbtn" value="Submit"/>
 		<input type="reset" id="resetbtn" value="Reset"/>
 		</form>
-	</center>
+	
 </body>
 </html>

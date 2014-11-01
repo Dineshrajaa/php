@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address Validation</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+	$("#address").on({
+    keydown: function (e) {
+    	var vetti=$("#address").val();
+		var vettilength=vetti.length;
+		if (vettilength==0) {
+        if (e.which === 32) {        	
+        	
+        	return false;
+        }
+        else return true;
+        }
+    },
+    change: function () {
+
+        this.value = this.value.replace(/\s/g, "");
+        
+    }
+});
+	});
+	
+	</script>
+</head>
+<label for="address">Address:</label>
+<textarea id="address">	
+</textarea>
+<input type="button" id="sub"/>
+</html>
